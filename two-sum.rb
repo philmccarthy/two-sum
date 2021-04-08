@@ -4,3 +4,12 @@
 # e.g.
 # 1.)  given `[1,3,5,7], 12` your function/method will return true since the number 5 + 7 = 12
 # 2.) Example given `[2,3,4,5], 11` you function/method will return false since no two numbers would equal 11
+
+def two_sum(integers, target) 
+  checked = {}
+  integers.each.with_index do |num, idx|
+    diff = target - num
+    checked[diff] ? (return true) : (checked[num] = idx)
+  end
+  false
+end
